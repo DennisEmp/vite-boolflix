@@ -1,5 +1,21 @@
 <script>
+import AppSearch from '../components/AppSearch.vue';
+import List from '../components/List.vue';
+import axios from 'axios';
+import { store } from "../store.js";
 
+
+export default {
+  components: {
+    AppSearch,
+    List
+  },
+  data() {
+    return {
+      store,
+    }
+  },
+}
 </script>
 
 <template>
@@ -9,9 +25,4 @@
 </template>
 
 <style scoped>
-.container {
-    background-color: red;
-    width: 1000px;
-    height: 1000px;
-}
 </style>
