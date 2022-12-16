@@ -1,28 +1,16 @@
 <script>
-import AppSearch from '../components/AppSearch.vue';
-import List from '../components/List.vue';
-import axios from 'axios';
-import { store } from "../store.js";
-
 
 export default {
-  components: {
-    AppSearch,
-    List
-  },
-  data() {
-    return {
-      store,
-    }
-  },
+  name: "AppHeader",
 }
 </script>
 
 <template>
     <div class="container">
-
+      <h3 class="font text-start">Boolflix</h3>
     </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+
 </style>

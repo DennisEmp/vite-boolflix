@@ -1,11 +1,10 @@
 <script>
-import List from './List.vue'
 import { store } from "../store.js";
+import SingleCard from './SingleCard.vue';
 
 export default {
   components: {
-    AppMain,
-    List
+    SingleCard
   },
   data() {
     return {
@@ -16,6 +15,10 @@ export default {
 </script>
 
 <template>
+
+  <section class="container"> 
+    <SingleCard v-for="(movie,index) in store.MovieList" :key="index" :info="movie" />
+  </section>
 
 </template>
 
