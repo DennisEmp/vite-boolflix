@@ -1,7 +1,6 @@
 <script >
 export default {
     name: "SingleCard",
-
     props: { 
         info:Object
     }
@@ -10,7 +9,7 @@ export default {
 
 <template>
     <div class="card">
-        <img :src="`https://image.tmdb.org/t/p/w200/${info.poster_path}`" alt="">
+        <img :src="`https://image.tmdb.org/t/p/w500/${info.poster_path}`" alt="">
         <div>
             Titolo: {{ info.title }}
         </div>
@@ -18,7 +17,6 @@ export default {
             Lingua originale:{{ info.original_title }}
         </div>
         <div>
-            Lingua:{{ info.original_language }}
         </div>
         <div>
             Voto: {{ info.vote_average }}
@@ -30,6 +28,15 @@ export default {
 @use '../style/partials/variables.scss' as *;
 @use '../style/general.scss' as *;
 .card {
-    text-align: center;
+    width: 250px;
+    height: 400px;
+    line-height: 25px;
+    margin-bottom: 150px;
+    border: 1px solid white;
 }
+
+img {
+        width: 100%;
+        height: 100%;
+    }
 </style>

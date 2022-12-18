@@ -21,7 +21,7 @@ export default {
       axios
         .get(store.apiURL)
         .then(res => {
-          store.MovieList = res.data.results;
+          store.MovieList = res.data;
         })
         .catch(err => {
           console.log("ERRORI", err);
