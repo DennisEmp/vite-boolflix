@@ -2,62 +2,78 @@
 
 export default {
     name: "SingleCard",
-    props:  ["info"],
+    props: {
+        info: Object
+    },
+
+
+    data() {
+        return {
+            flagList: [
+                {
+                    img: "img/it.png",
+                    lang: "it"
+                },
+                {
+                    img: "img/fr.png",
+                    lang: "fr"
+                },
+                {
+                    img: "img/uk.png",
+                    lang: "en"
+                },
+                {
+                    img: "img/es.png",
+                    lang: "es"
+                },
+                {
+                    img: "img/de.png",
+                    lang: "de"
+                },
+                {
+                    img: "img/ch.png",
+                    lang: "ch"
+                },
+                {
+                    img: "img/usa.png",
+                    lang: "usa"
+                },
+                {
+                    img: "img/ru.png",
+                    lang: "ru"
+                },
+                {
+                    img: "img/noflag.png",
+                    lang: ""
+                },
+            ]
+        }
+    },
+
+    computed: {
+            getFlags() {
+                for (let i = 0; i < this.flagList.length; i++) {
+                    if (this.flagList[i].lang.includes(this.info.original_language)) {
+                        return this.flagList[i].img
+                    }
+                }
+                return this.flagList[this.flagList.length - 1].img
+            }
+        }
 }
 
-data() {
-    return {
-        flagList: [
-            {
-                img: "img/it.png",
-                lang: "it"
-            },
-            {
-                img: "img/fr.png",
-                lang: "fr"
-            },
-            {
-                img: "img/uk.png",
-                lang: "en"
-            },
-            {
-                img: "img/es.png",
-                lang: "es"
-            },
-            {
-                img: "img/de.png",
-                lang: "de"
-            },
-            {
-                img: "img/ch.png",
-                lang: "ch"
-            },
-            {
-                img: "img/usa.png",
-                lang: "usa"
-            },
-            {
-                img: "img/ru.png",
-                lang: "ru"
-            }
-            {
-                img: "img/noflag.png",
-                lang: "nocountry"
-            }
-        ]
-    }
-};
 </script>
 
 <template>
     <div class="card">
-        <img :src="`https://image.tmdb.org/t/p/w500/${info.poster_path}`" alt="">
+        <img :src="`https://image.tmdb.org/t/p/w500/${info.poster_path}`" alt="" class="poster">
         <div>
             {{ info.title }}
         </div>
         <div class="info-film">
             <div>
-                Lingua originale:{{ info.original_language }}
+                Lingua originale:
+                <img :src="getFlags" alt="flags" class="flags"><img>
             </div>
             <div>
             </div>
@@ -78,9 +94,14 @@ data() {
     margin-bottom: 55px;
 }
 
-img {
+.poster {
         width: 246px;
         height: 330px;
-    }
+}
+
+.flags {
+    width: 22px;
+    height: 22px;
+}
 
 </style>
