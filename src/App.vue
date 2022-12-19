@@ -5,6 +5,7 @@ import AppMain from "./components/AppMain.vue"
 import AppSearch from "./components/AppSearch.vue";
 import axios from 'axios'
 
+// implement
 export default {
   components: {
     AppHeader,
@@ -16,12 +17,18 @@ export default {
       store,
     }
   },
+
   methods: {
     getMovies() {
+      let UrlSearch = store.apiURL;
+      // COND 
+      if (store.searchMovie !== "") {
+       UrlSearch = `${store.apiSearchMovie}&query=${store.searchMovie}`
+      }
       axios
-        .get(store.apiURL)
+        .get(store.UrlSearch)
         .then(res => {
-          store.MovieList = res.data;
+          store.MovieList = res.data.results;
         })
         .catch(err => {
           console.log("ERRORI", err);
@@ -40,7 +47,7 @@ export default {
   <AppHeader />
 </div>
 <div class="containerSearch">
-  <AppSearch />
+  <AppSearch @searchTitle="getMovies" />
 </div>
 <div class="containerMain">
   <AppMain />

@@ -18,10 +18,10 @@ export default {
     <div class="container d-flex justify-content-end py-3">
         <div>
             <label for="search-character" class="visually-hidden"> Search Character </label>
-            <input type="text" class="form-controll" id="search-Film" placeholder="Search Film" v-model="store.searchText" />
+            <input type="text" class="form-controll" id="search-Film" placeholder="Search Film" v-model="store.searchMovie" />
         </div>
         <div>
-            <button type="submit" class="btn btn-outline-danger mb-2" @click.prevent="$emit('search')"> Search </button>
+            <button type="submit" class="btn btn-outline-danger mb-2" @click.prevent="$emit('searchTitle')"> Search </button>
         </div>
     </div>
 </template>
