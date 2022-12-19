@@ -20,20 +20,19 @@ export default {
 
   methods: {
     getMovies() {
-      let UrlSearch = store.apiURL;
+      let urlSearch = store.apiURL;
       // COND 
       if (store.searchMovie !== "") {
-       UrlSearch = `${store.apiSearchMovie}&query=${store.searchMovie}`
+       urlSearch = `${store.apiSearchMovie}&query=${store.searchMovie}`
       }
       axios
-        .get(store.UrlSearch)
+        .get(urlSearch)
         .then(res => {
           store.MovieList = res.data.results;
         })
-        .catch(err => {
-          console.log("ERRORI", err);
-        }
-        );
+        .catch((err) => {
+          console.log(err);
+        });
     }
   },
   mounted() {

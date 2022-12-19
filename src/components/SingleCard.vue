@@ -1,8 +1,52 @@
-<script >
+<script>
+
 export default {
     name: "SingleCard",
     props:  ["info"],
 }
+
+data() {
+    return {
+        flagList: [
+            {
+                img: "img/it.png",
+                lang: "it"
+            },
+            {
+                img: "img/fr.png",
+                lang: "fr"
+            },
+            {
+                img: "img/uk.png",
+                lang: "en"
+            },
+            {
+                img: "img/es.png",
+                lang: "es"
+            },
+            {
+                img: "img/de.png",
+                lang: "de"
+            },
+            {
+                img: "img/ch.png",
+                lang: "ch"
+            },
+            {
+                img: "img/usa.png",
+                lang: "usa"
+            },
+            {
+                img: "img/ru.png",
+                lang: "ru"
+            }
+            {
+                img: "img/noflag.png",
+                lang: "nocountry"
+            }
+        ]
+    }
+};
 </script>
 
 <template>
@@ -13,7 +57,7 @@ export default {
         </div>
         <div class="info-film">
             <div>
-                Lingua originale:{{ info.original_title }}
+                Lingua originale:{{ info.original_language }}
             </div>
             <div>
             </div>
@@ -32,7 +76,6 @@ export default {
     height: 400px;
     line-height: 25px;
     margin-bottom: 55px;
-    border: 1px solid white;
 }
 
 img {
