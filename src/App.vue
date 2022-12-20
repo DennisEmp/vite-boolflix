@@ -2,7 +2,6 @@
 import { store } from "./store.js";
 import AppHeader from "./components/AppHeader.vue"
 import AppMain from "./components/AppMain.vue"
-import AppSearch from "./components/AppSearch.vue";
 import axios from 'axios'
 
 // implement
@@ -10,7 +9,6 @@ export default {
   components: {
     AppHeader,
     AppMain,
-    AppSearch
 },
   data() {
     return {
@@ -43,10 +41,7 @@ export default {
 
 <template>
 <div class="contianerHeader">
-  <AppHeader />
-</div>
-<div class="containerSearch">
-  <AppSearch @searchTitle="getMovies" />
+  <AppHeader @searchTitle="getMovies" />
 </div>
 <div class="containerMain">
   <AppMain />

@@ -51,6 +51,10 @@ export default {
     },
 
     computed: {
+        cardStyle() {
+            // return { background: 'red' }
+            return { "background-image":`url(https://image.tmdb.org/t/p/w500/${this.info.poster_path})`}
+        },
             getFlags() {
                 for (let i = 0; i < this.flagList.length; i++) {
                     if (this.flagList[i].lang.includes(this.info.original_language)) {
@@ -93,10 +97,9 @@ export default {
     </div> -->
 
 
-    <div class="card">
+    <div class="card" :style="cardStyle">
         <div class="card-info">
-            <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"></path><path d="M4.828 21l-.02.02-.021-.02H2.992A.993.993 0 0 1 2 20.007V3.993A1 1 0 0 1 2.992 3h18.016c.548 0 .992.445.992.993v16.014a1 1 0 0 1-.992.993H4.828zM20 15V5H4v14L14 9l6 6zm0 2.828l-6-6L6.828 19H20v-1.172zM8 11a2 2 0 1 1 0-4 2 2 0 0 1 0 4z" fill="currentColor"></path></svg>
-            <div class="card-img"></div>
+            <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"></path></svg>           
             <p class="text-title"> {{ info.title }} </p>
             <div class="text-body">
                 <div class="info-film">
@@ -155,21 +158,21 @@ export default {
 // }
 
 .info-film {
-    font-size: 10px;
+    font-size: 12px;
+    color: #fff;
 }
 
 
 .card {
- width: 190px;
- height: 254px;
- border-radius: 1em;
- padding: 1.9rem;
-//  background img???
+ width: 251px;
+ height: 376px;
  position: relative;
  display: flex;
- align-items: flex-end;
+ align-items: center;
+ justify-content: center;
  transition: 0.4s ease-out;
- box-shadow: 0px 7px 20px rgba(43, 8, 37, 0.2);
+ box-shadow: 0px 7px 20px rgba(43, 8, 37, 0.3);
+ background-size: contain;
 }
 
 .card:before {
@@ -184,19 +187,29 @@ export default {
 }
 
 .card-info {
+ width: 251px;
+ height: 376px;
+ border-radius: 5px;
  position: relative;
  z-index: 3;
  color: #f5f5f5;
  opacity: 0;
  transform: translateY(20%);
- transition: 0.5s;
+ transition: 0.3s;
+ background-color: rgba(0, 0, 0, 0.5);
+ opacity: 0%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+ padding: 20px;
 }
 
 /*Text*/
 .text-title {
  font-weight: 500;
  font-size: 20px;
- color: black;
+ color: white;
 }
 
 .text-body {
@@ -211,7 +224,7 @@ export default {
 
 /*Hover*/
 .card:hover {
- transform: translateY(5%);
+ transform: translateY(3%);
 }
 
 .card:hover:before {
@@ -223,8 +236,5 @@ export default {
  transform: translateY(0);
 }
 
-.card-button:hover {
- background: rgba(218, 77, 77, 0.4);
- color: #f5f5f5;
-}
+
 </style>
