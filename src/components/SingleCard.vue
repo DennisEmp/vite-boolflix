@@ -93,31 +93,32 @@ export default {
     </div> -->
 
 
-<div class="card">
-    <div class="card-info">
-        <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"></path><path d="M4.828 21l-.02.02-.021-.02H2.992A.993.993 0 0 1 2 20.007V3.993A1 1 0 0 1 2.992 3h18.016c.548 0 .992.445.992.993v16.014a1 1 0 0 1-.992.993H4.828zM20 15V5H4v14L14 9l6 6zm0 2.828l-6-6L6.828 19H20v-1.172zM8 11a2 2 0 1 1 0-4 2 2 0 0 1 0 4z" fill="currentColor"></path></svg>
-        <p class="text-title"> {{ info.title }} </p>
-        <div class="text-body">
-            <div class="info-film">
-                <div>
-                    Lingua Originale:
-                    <img :src="getFlags" alt="flags" class="flags"><img>
-                </div>
-                <div class="stars">
-                    <div class="d-flex gap-1">
-                        <span>Voto:</span>
-                        <div v-for="star in StarRatings">
-                            <font-awesome-icon icon="fa-solid fa-star" />
-                        </div>
-                        <div v-for="star in 5 - StarRatings">
-                            <font-awesome-icon icon="fa-regular fa-star" />
+    <div class="card">
+        <div class="card-info">
+            <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"></path><path d="M4.828 21l-.02.02-.021-.02H2.992A.993.993 0 0 1 2 20.007V3.993A1 1 0 0 1 2.992 3h18.016c.548 0 .992.445.992.993v16.014a1 1 0 0 1-.992.993H4.828zM20 15V5H4v14L14 9l6 6zm0 2.828l-6-6L6.828 19H20v-1.172zM8 11a2 2 0 1 1 0-4 2 2 0 0 1 0 4z" fill="currentColor"></path></svg>
+            <div class="card-img"></div>
+            <p class="text-title"> {{ info.title }} </p>
+            <div class="text-body">
+                <div class="info-film">
+                    <div>
+                        Lingua Originale:
+                        <img :src="getFlags" alt="flags" class="flags"><img>
+                    </div>
+                    <div class="stars">
+                        <div class="d-flex gap-1">
+                            <span>Voto:</span>
+                            <div v-for="star in StarRatings">
+                                <font-awesome-icon icon="fa-solid fa-star" />
+                            </div>
+                            <div v-for="star in 5 - StarRatings">
+                                <font-awesome-icon icon="fa-regular fa-star" />
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </template>
 
 <style lang="scss" scoped>
@@ -139,10 +140,10 @@ export default {
 //         height: 330px;
 // }
 
-// .flags {
-//     width: 15px;
-//     height: 15px;
-// }
+.flags {
+    width: 20px;
+    height: 20px;
+}
 
 // .star {
 //     display: flex;
@@ -153,9 +154,9 @@ export default {
 //     font-size: 14px;
 // }
 
-// .info-film {
-//     font-size: 10px;
-// }
+.info-film {
+    font-size: 10px;
+}
 
 
 .card {
@@ -163,7 +164,7 @@ export default {
  height: 254px;
  border-radius: 1em;
  padding: 1.9rem;
- background: #f5f5f5;
+//  background img???
  position: relative;
  display: flex;
  align-items: flex-end;
@@ -193,8 +194,9 @@ export default {
 
 /*Text*/
 .text-title {
- font-size: 1.5rem;
  font-weight: 500;
+ font-size: 20px;
+ color: black;
 }
 
 .text-body {

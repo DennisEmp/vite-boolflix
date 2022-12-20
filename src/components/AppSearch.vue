@@ -15,7 +15,7 @@ export default {
 
 
 <template>
-    <div class="container d-flex justify-content-end py-3">
+    <div class="search-cont">
         <div>
             <label for="search-character" class="visually-hidden"> Search Character </label>
             <input type="text" class="form-controll" id="search-Film" placeholder="Search Film" v-model="store.searchMovie" />
@@ -30,22 +30,23 @@ export default {
         <!-- <div>
             <button type="submit" @click.prevent="$emit('searchTitle')"> Search </button>
         </div> -->
-    </div>
-
-
-    
+    </div>   
 </template>
 
 
 <style lang="scss" scoped>
-
+.search-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1320px;
+}
 .form-controll {
     padding-left: 10px;
 }
 
 .cta {
  position: relative;
- margin: auto;
  padding: 12px 18px;
  transition: all 0.2s ease;
  border: none;
@@ -59,7 +60,7 @@ export default {
  left: 0;
  display: block;
  border-radius: 50px;
- background: #b1dae7;
+ background: #e50914;
  width: 45px;
  height: 45px;
  transition: all 0.3s ease;
@@ -67,11 +68,10 @@ export default {
 
 .cta span {
  position: relative;
- font-family: "Ubuntu", sans-serif;
  font-size: 18px;
  font-weight: 700;
  letter-spacing: 0.05em;
- color: #234567;
+ color:#fff;
 }
 
 .cta svg {
